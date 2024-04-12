@@ -13,16 +13,16 @@ export const About = () => {
     <section>
       <div className="flex-col ">
         <h1
-          data-aos="fade-down"
-          data-aos-duration="1000"
+          //   data-aos="fade-down"
+          //   data-aos-duration="1000"
           className="font-bold text-grisclaro text-3xl mt-52 mb-10 ml-80 before:content-['01.'] before:text-naranja divide-y-0"
         >
           Sobre mi
         </h1>
         <div className="flex  mb-20 w-2/3  ">
           <div
-            data-aos="fade-right"
-            data-aos-duration="1000"
+            // data-aos="fade-right"
+            // data-aos-duration="1000"
             className=" text-grismedio ml-80 w-1/2 mb-10 font-sans"
           >
             <p>
@@ -72,8 +72,8 @@ export const About = () => {
           </div>
           <div className="mr-6">
             <Image
-              data-aos="fade-left"
-              data-aos-duration="1000"
+              //   data-aos="fade-left"
+              //   data-aos-duration="1000"
               className="rounded-md "
               src={"/imgs/marcos.jpg"}
               alt={""}

@@ -13,29 +13,29 @@ export const MainSection = () => {
       <section className="ml-60 ">
         <div className="flex flex-col mt-20 pl-15 w-full">
           <h1
-            data-aos="fade-down"
-            data-aos-duration="1000"
+            // data-aos="fade-down"
+            // data-aos-duration="1000"
             className="  text-naranja w-full text-2xl block"
           >
             Hola, mi nombre es
           </h1>
           <h2
-            data-aos="fade-down"
-            data-aos-duration="1200"
+            // data-aos="fade-down"
+            // data-aos-duration="1200"
             className=" text-gris font-mono text-7xl font-semibold mt-3 block"
           >
             Marcos Daut.
           </h2>
           <h3
-            data-aos="fade-down"
-            data-aos-duration="1400"
+            // data-aos="fade-down"
+            // data-aos-duration="1400"
             className="text-grismedio font-bold font-mono text-6xl block"
           >
             Soy Programador Web Full Stack.
           </h3>
           <p
-            data-aos="fade-down"
-            data-aos-duration="1600"
+            // data-aos="fade-down"
+            // data-aos-duration="1600"
             className="w-1/2 mt-4 text-grismedio font-sans"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut earum

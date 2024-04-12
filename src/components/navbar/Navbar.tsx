@@ -4,132 +4,138 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import {
+  IoAccessibility,
+  IoAlbums,
+  IoBriefcase,
+  IoCloseOutline,
+  IoPerson,
+  IoPersonOutline,
+} from "react-icons/io5";
+import { useUIStore } from "@/store";
+import clsx from "clsx";
 
 export const Navbar = () => {
-  const [isClick, setisClick] = useState(false);
-
-  const toogleNavbar = (): void => {
-    setisClick(!isClick);
-  };
+  const isSideMenuOpen = useUIStore((store) => store.isSideMenuOpen);
+  const closeMenu = useUIStore((store) => store.closeSideMenu);
 
   useEffect(() => {
     AOS.init({});
   }, []);
 
   return (
-    <>
-      <nav className="flex px-10 py-7 justify-between items-center w-full  top-0 bg-azul shadow-sm ">
-        <div className="ml-3">
-          <Link href={"/"} data-aos="fade-down" data-aos-duration="400">
-            <Image
-              className="absolute -z-1 "
-              src={"/imgs/hex-icono.png"}
-              alt={""}
-              height={60}
-              width={60}
-            />
+    <header className="w-screen h-20 z-20 fized flex justify-center items-center backdrop-blur-[10px] animate-fade-in-down duration-500 px-4 md:px-8">
+      <nav className="w-full h-full flex items-center justify-between max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl ">
+        <a>
+          <Image
+            className="absolute z-1 hover:-translate-x-0.5 hover:-translate-y-0.5"
+            src={"/imgs/hex-icono-principal.png"}
+            alt={""}
+            height={60}
+            width={60}
+          />
+        </a>
 
-            <div>
-              <Image
-                className="absolute z-1 hover:-translate-x-0.5 hover:-translate-y-0.5"
-                src={"/imgs/hex-icono-principal.png"}
-                alt={""}
-                height={60}
-                width={60}
-              />
-            </div>
-          </Link>
+        <ul className="hidden md:flex gap-7 lg:gap-8">
+          <a
+            data-aos="fade-down"
+            data-aos-duration="200"
+            href="/"
+            className="p-2 text-grisclaro  hover:text-naranja before:content-['01.'] before:text-naranja "
+          >
+            {" "}
+            Sobre mi
+          </a>
+          <a
+            data-aos="fade-down"
+            data-aos-duration="400"
+            href="/"
+            className="  p-2 text-grisclaro  hover:text-naranja before:content-['02.'] before:text-naranja"
+          >
+            {" "}
+            Proyectos
+          </a>
+          <a
+            data-aos="fade-down"
+            data-aos-duration="600"
+            href="/"
+            className="  p-2 text-grisclaro  hover:text-naranja before:content-['03.'] before:text-naranja"
+          >
+            {" "}
+            Servicios
+          </a>
+          <a
+            data-aos="fade-down"
+            data-aos-duration="800"
+            href="/"
+            className="  p-2 text-grisclaro  hover:text-naranja before:content-['04.'] before:text-naranja"
+          >
+            {" "}
+            Contacto
+          </a>
+        </ul>
+        <div className="hidden md:flex  ">
+          <a
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            href="/"
+            className=" text-grisclaro rounded-lg  transition-all ml-3 border-4 border-naranja p-2 hover:-translate-x-1 hover:-translate-y-1 "
+          >
+            {" "}
+            Curriculum
+          </a>
         </div>
-        <div className="hidden sm:block ">
-          <div className="flex m-2">
-            <a
-              data-aos="fade-down"
-              data-aos-duration="200"
-              href="/"
-              className="p-2 text-grisclaro  hover:text-naranja before:content-['01.'] before:text-naranja "
+        {/* {menu en mobile} */}
+        <div>
+          {isSideMenuOpen && (
+            <div className="fixed top-0 left-0 w-screen h-screen z-10 bg-negro opacity-30 "></div>
+          )}
+          {isSideMenuOpen && (
+            <div className="fade-in fixed top-0 left-0 w-screen h-screen z-10 backdrop-filter backdrop-blur-md"></div>
+          )}
+          <div
+            className={clsx(
+              "fixed p-5 right-0 top-0 w-[500px] h-screen bg-azul z-20 shadow-2xl tranform transition duration-300",
+              { "translate-x-full": !isSideMenuOpen }
+            )}
+          >
+            <IoCloseOutline
+              color="#475569"
+              size={50}
+              className="absolute top-5 right-5 cursor-pointer"
+              onClick={() => console.log("click")}
+            />
+            <Link
+              href={"/"}
+              className="flex items-center mt-10 p-2 rounded transition-all"
             >
-              {" "}
-              Sobre mi
-            </a>
-            <a
-              data-aos="fade-down"
-              data-aos-duration="400"
-              href="/"
-              className="  p-2 text-grisclaro  hover:text-naranja before:content-['02.'] before:text-naranja"
+              <IoAccessibility size={30} color="#F95738" />
+              <span className="ml-3 text-xl text-grisclaro">Sobre mi</span>
+            </Link>
+            <Link
+              href={"/"}
+              className="flex items-center mt-10 p-2 rounded transition-all"
             >
-              {" "}
-              Proyectos
-            </a>
-            <a
-              data-aos="fade-down"
-              data-aos-duration="600"
-              href="/"
-              className="  p-2 text-grisclaro  hover:text-naranja before:content-['03.'] before:text-naranja"
+              <IoAlbums size={30} color="#F95738" />
+              <span className="ml-3 text-xl text-grisclaro">Proyectos</span>
+            </Link>
+            <Link
+              href={"/"}
+              className="flex items-center mt-10 p-2 rounded transition-all"
             >
-              {" "}
-              Servicios
-            </a>
-            <a
-              data-aos="fade-down"
-              data-aos-duration="800"
-              href="/"
-              className="  p-2 text-grisclaro  hover:text-naranja before:content-['04.'] before:text-naranja"
+              <IoBriefcase size={30} color="#F95738" />
+              <span className="ml-3 text-xl text-grisclaro">Servicios</span>
+            </Link>
+            <Link
+              href={"/"}
+              className="flex items-center mt-10 p-2 rounded transition-all"
             >
-              {" "}
-              Contacto
-            </a>
-            <div className=" flex  ">
-              <a
-                data-aos="fade-down"
-                data-aos-duration="1000"
-                href="/"
-                className=" text-grisclaro rounded-lg  transition-all ml-3 border-4 border-naranja p-2 hover:-translate-x-1 hover:-translate-y-1 "
-              >
-                {" "}
-                Curriculum
-              </a>
-            </div>
-          </div>
-          <div className="md:hidden flex items-center">
-            <button
-              className="inline-flex items-center justify-center p-2 rounded-md text-grisclaro hover:text-grisclaro focus:outline-none focus:ring-2 focus:ring-inset rocus:ring-white"
-              onClick={toogleNavbar}
-            >
-              {isClick ? (
-                <svg
-                  className="h-6 w-6 "
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="h-6 w-6 "
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                </svg>
-              )}
-            </button>
+              <IoPerson size={30} color="#F95738" />
+              <span className="ml-3 text-xl text-grisclaro">Contacto</span>
+            </Link>
           </div>
         </div>
       </nav>
-    </>
+    </header>
   );
 };
