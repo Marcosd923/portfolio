@@ -10,26 +10,26 @@ export const MainSection = () => {
 
   return (
     <main>
-      <section className="ml-60 ">
-        <div className="flex flex-col mt-20 pl-15 w-full">
+      <section className="ml-12 sm:ml-28  md:ml-44 xl:ml-60 ">
+        <div className="flex flex-col gap-1 pt-28 w-full">
           <h1
             // data-aos="fade-down"
             // data-aos-duration="1000"
-            className="  text-naranja w-full text-2xl block"
+            className="  text-naranja w-full text-xs sm:text-base md:text-lg xl:text-2xl block"
           >
             Hola, mi nombre es
           </h1>
           <h2
             // data-aos="fade-down"
             // data-aos-duration="1200"
-            className=" text-gris font-mono text-7xl font-semibold mt-3 block"
+            className=" text-gris font-mono text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-semibold mt-3 block"
           >
             Marcos Daut.
           </h2>
           <h3
             // data-aos="fade-down"
             // data-aos-duration="1400"
-            className="text-grismedio font-bold font-mono text-6xl block"
+            className="text-grismedio font-bold font-mono text-3xl sm:text-4xl md:text-5xl xl:text-6xl block"
           >
             Soy Programador Web Full Stack.
           </h3>

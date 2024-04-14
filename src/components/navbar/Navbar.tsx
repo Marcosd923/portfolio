@@ -9,6 +9,7 @@ import {
   IoAlbums,
   IoBriefcase,
   IoCloseOutline,
+  IoMenu,
   IoPerson,
   IoPersonOutline,
 } from "react-icons/io5";
@@ -19,6 +20,8 @@ export const Navbar = () => {
   const isSideMenuOpen = useUIStore((store) => store.isSideMenuOpen);
   const closeMenu = useUIStore((store) => store.closeSideMenu);
 
+  const openSideMenu = useUIStore(state =>state.openSideMenu)
+
   useEffect(() => {
     AOS.init({});
   }, []);
@@ -28,7 +31,7 @@ export const Navbar = () => {
       <nav className="w-full h-full flex items-center justify-between max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl ">
         <a>
           <Image
-            className="absolute z-1 hover:-translate-x-0.5 hover:-translate-y-0.5"
+            className=""
             src={"/imgs/hex-icono-principal.png"}
             alt={""}
             height={60}
@@ -36,7 +39,7 @@ export const Navbar = () => {
           />
         </a>
 
-        <ul className="hidden md:flex gap-7 lg:gap-8">
+        <ul className="hidden md:flex gap-7 lg:gap-3">
           <a
             data-aos="fade-down"
             data-aos-duration="200"
@@ -79,14 +82,22 @@ export const Navbar = () => {
             data-aos="fade-down"
             data-aos-duration="1000"
             href="/"
-            className=" text-grisclaro rounded-lg  transition-all ml-3 border-4 border-naranja p-2 hover:-translate-x-1 hover:-translate-y-1 "
+            className=" text-grisclaro rounded-lg  transition-all  border-4 border-naranja p-2 hover:-translate-x-1 hover:-translate-y-1 "
           >
             {" "}
             Curriculum
           </a>
         </div>
         {/* {menu en mobile} */}
-        <div>
+        
+          <IoMenu color="#F95738"
+              size={50}
+              className="md:hidden sm:flex absolute top-5 right-9 cursor-pointer"
+              onClick={openSideMenu}
+              >
+              </IoMenu>
+        
+        <div >
           {isSideMenuOpen && (
             <div className="fixed top-0 left-0 w-screen h-screen z-10 bg-negro opacity-30 "></div>
           )}
@@ -95,43 +106,43 @@ export const Navbar = () => {
           )}
           <div
             className={clsx(
-              "fixed p-5 right-0 top-0 w-[500px] h-screen bg-azul z-20 shadow-2xl tranform transition duration-300",
+              "fixed p-5 right-0 top-0 w-[350px] h-screen bg-azul z-20 shadow-2xl tranform transition duration-300",
               { "translate-x-full": !isSideMenuOpen }
             )}
           >
             <IoCloseOutline
               color="#475569"
               size={50}
-              className="absolute top-5 right-5 cursor-pointer"
-              onClick={() => console.log("click")}
+              className="absolute top-5 right-5 cursor-pointer "
+              onClick={() => closeMenu()}
             />
             <Link
               href={"/"}
               className="flex items-center mt-10 p-2 rounded transition-all"
             >
               <IoAccessibility size={30} color="#F95738" />
-              <span className="ml-3 text-xl text-grisclaro">Sobre mi</span>
+              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">Sobre mi</span>
             </Link>
             <Link
               href={"/"}
               className="flex items-center mt-10 p-2 rounded transition-all"
             >
               <IoAlbums size={30} color="#F95738" />
-              <span className="ml-3 text-xl text-grisclaro">Proyectos</span>
+              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">Proyectos</span>
             </Link>
             <Link
               href={"/"}
               className="flex items-center mt-10 p-2 rounded transition-all"
             >
               <IoBriefcase size={30} color="#F95738" />
-              <span className="ml-3 text-xl text-grisclaro">Servicios</span>
+              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">Servicios</span>
             </Link>
             <Link
               href={"/"}
               className="flex items-center mt-10 p-2 rounded transition-all"
             >
               <IoPerson size={30} color="#F95738" />
-              <span className="ml-3 text-xl text-grisclaro">Contacto</span>
+              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">Contacto</span>
             </Link>
           </div>
         </div>

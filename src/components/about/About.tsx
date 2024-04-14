@@ -15,7 +15,7 @@ export const About = () => {
         <h1
           //   data-aos="fade-down"
           //   data-aos-duration="1000"
-          className="font-bold text-grisclaro text-3xl mt-52 mb-10 ml-80 before:content-['01.'] before:text-naranja divide-y-0"
+          className="font-bold text-grisclaro text-3xl mt-52 mb-10 ml-12 sm:ml-32 md:ml-60 xl:ml-80 before:content-['01.'] before:text-naranja divide-y-0"
         >
           Sobre mi
         </h1>
@@ -23,9 +23,9 @@ export const About = () => {
           <div
             // data-aos="fade-right"
             // data-aos-duration="1000"
-            className=" text-grismedio ml-80 w-1/2 mb-10 font-sans"
+            className=" text-grismedio ml-12 sm:ml-32 md:ml-60 xl:ml-80 w-1/2 mb-10 font-sans"
           >
-            <p>
+            <p className="">
               ¡Hola! Mi nombre es Marcos y me considero una persona a la cual le
               gusta aprender e ir en búsqueda de nuevos desafíos. Me recibí de
               Programador Web Full Stack en el 2023 y actualmente estoy
