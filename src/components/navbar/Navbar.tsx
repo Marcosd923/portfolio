@@ -20,7 +20,7 @@ export const Navbar = () => {
   const isSideMenuOpen = useUIStore((store) => store.isSideMenuOpen);
   const closeMenu = useUIStore((store) => store.closeSideMenu);
 
-  const openSideMenu = useUIStore(state =>state.openSideMenu)
+  const openSideMenu = useUIStore((state) => state.openSideMenu);
 
   useEffect(() => {
     AOS.init({});
@@ -89,15 +89,15 @@ export const Navbar = () => {
           </a>
         </div>
         {/* {menu en mobile} */}
-        
-          <IoMenu color="#F95738"
-              size={50}
-              className="md:hidden sm:flex absolute top-5 right-9 cursor-pointer"
-              onClick={openSideMenu}
-              >
-              </IoMenu>
-        
-        <div >
+
+        <IoMenu
+          color="#F95738"
+          size={50}
+          className="md:hidden sm:flex absolute top-5 right-9 cursor-pointer"
+          onClick={openSideMenu}
+        ></IoMenu>
+
+        <div>
           {isSideMenuOpen && (
             <div className="fixed top-0 left-0 w-screen h-screen z-10 bg-negro opacity-30 "></div>
           )}
@@ -121,28 +121,36 @@ export const Navbar = () => {
               className="flex items-center mt-10 p-2 rounded transition-all"
             >
               <IoAccessibility size={30} color="#F95738" />
-              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">Sobre mi</span>
+              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">
+                Sobre mi
+              </span>
             </Link>
             <Link
               href={"/"}
               className="flex items-center mt-10 p-2 rounded transition-all"
             >
               <IoAlbums size={30} color="#F95738" />
-              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">Proyectos</span>
+              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">
+                Proyectos
+              </span>
             </Link>
             <Link
               href={"/"}
               className="flex items-center mt-10 p-2 rounded transition-all"
             >
               <IoBriefcase size={30} color="#F95738" />
-              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">Servicios</span>
+              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">
+                Servicios
+              </span>
             </Link>
             <Link
               href={"/"}
               className="flex items-center mt-10 p-2 rounded transition-all"
             >
               <IoPerson size={30} color="#F95738" />
-              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">Contacto</span>
+              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">
+                Contacto
+              </span>
             </Link>
           </div>
         </div>

@@ -11,6 +11,8 @@ const config: Config = {
       transparent: "transparent",
       current: "currentColor",
       azul: "#0a192f",
+      azulmedio: "#003f88",
+      azulclaro: "#98c1d9",
       naranja: "#F95738",
       gris: "#e2e8f0",
       grisclaro: "#d1d5db",

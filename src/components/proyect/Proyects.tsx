@@ -7,9 +7,9 @@ export const Proyects = () => {
       <h1 className="font-bold text-grisclaro text-3xl mt-20 mb-10 flex justify-center  before:content-['02.'] before:text-naranja divide-y-0">
         Proyectos
       </h1>
-      <article className="m-auto mt-2 grid gap-8 md:gap-10 xl:grid-cols-2 2xl:grid-cols-2 max-w-md sm:max-w-lg lg:max-w-3xl xl:max-w-6xl 2xl:max-w-7xl ">
-        <div className="block group bg-grisoscuro w-full max-w-[28rem] hover:drop-shadow-white shadow-sm rounded-md overflow-hidden transition-all duration-200 grayscale hover:grayscale-0 ">
-          <div className="overflow-hidden h-[220px]">
+      <article className="m-auto mt-2  grid gap-8 md:gap-10 xl:grid-cols-2 2xl:grid-cols-2 max-w-md sm:max-w-lg lg:max-w-3xl xl:max-w-6xl 2xl:max-w-7xl ">
+        <div className=" block group w-full max-w-[28rem]  hover:shadow-negro shadow-md rounded-md overflow-hidden transition-all duration-200 grayscale  hover:grayscale-0 group">
+          <div className="overflow-hidden h-[230px] ">
             <Link href="https://fullsix.onrender.com/">
               <Image
                 className="object-cover group-hover:scale-[1.05] transition duration-300"
@@ -20,13 +20,13 @@ export const Proyects = () => {
               />
             </Link>
           </div>
-          <div className="p-4 py-3 flex flex-col gap-1 justify-center">
+          <div className="p-4 py-3 flex flex-col gap-1 justify-center ">
             <div></div>
-            <div className="flex justify-between capitalize font-medium text-xl hover:text-naranja  mt-3">
+            <div className="flex justify-between capitalize font-medium text-xl text-naranja font-sans mt-3">
               <span>Full six</span>
-              <span></span>
+              <span className="mr-1">2023</span>
             </div>
-            <p className="">
+            <p className="font-sans text-grisclaro">
               Pagina web para curso de Programacion Web Full Stack, realizada
               con Node Js, Javascript, Html, CSS, Express y MySQL. Venta de
               servicios de apoyo Psicologicos para el ambito deportivo
