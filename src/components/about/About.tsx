@@ -10,8 +10,8 @@ export const About = () => {
   }, []);
 
   return (
-    <section>
-      <div className="flex-col ">
+    <section id="sobre-mi">
+      <div className="flex-col mb-12 ">
         <h1
           //   data-aos="fade-down"
           //   data-aos-duration="1000"

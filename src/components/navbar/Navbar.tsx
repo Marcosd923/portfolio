@@ -29,7 +29,7 @@ export const Navbar = () => {
   return (
     <header className="w-screen h-20 z-20 fized flex justify-center items-center backdrop-blur-[10px] animate-fade-in-down duration-500 px-4 md:px-8">
       <nav className="w-full h-full flex items-center justify-between max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl ">
-        <a>
+        <Link href={"#"}>
           <Image
             className=""
             src={"/imgs/hex-icono-principal.png"}
@@ -37,28 +37,28 @@ export const Navbar = () => {
             height={60}
             width={60}
           />
-        </a>
+        </Link>
 
         <ul className="hidden md:flex gap-7 lg:gap-3">
-          <a
+          <Link
             data-aos="fade-down"
             data-aos-duration="200"
-            href="/"
+            href="#sobre-mi"
             className="p-2 text-grisclaro  hover:text-naranja before:content-['01.'] before:text-naranja "
           >
             {" "}
             Sobre mi
-          </a>
-          <a
+          </Link>
+          <Link
             data-aos="fade-down"
             data-aos-duration="400"
-            href="/"
+            href="#proyectos"
             className="  p-2 text-grisclaro  hover:text-naranja before:content-['02.'] before:text-naranja"
           >
             {" "}
             Proyectos
-          </a>
-          <a
+          </Link>
+          <Link
             data-aos="fade-down"
             data-aos-duration="600"
             href="/"
@@ -66,8 +66,8 @@ export const Navbar = () => {
           >
             {" "}
             Servicios
-          </a>
-          <a
+          </Link>
+          <Link
             data-aos="fade-down"
             data-aos-duration="800"
             href="/"
@@ -75,18 +75,18 @@ export const Navbar = () => {
           >
             {" "}
             Contacto
-          </a>
+          </Link>
         </ul>
         <div className="hidden md:flex  ">
-          <a
+          <Link
             data-aos="fade-down"
             data-aos-duration="1000"
             href="/"
-            className=" text-grisclaro rounded-lg  transition-all  border-4 border-naranja p-2 hover:-translate-x-1 hover:-translate-y-1 "
+            className=" text-grisclaro rounded-lg  transition-all  border-4 border-naranja hover:bg-grisclaro hover:text-azul hover:font-bold p-2 hover:-translate-x-1 hover:-translate-y-1 "
           >
             {" "}
             Curriculum
-          </a>
+          </Link>
         </div>
         {/* {menu en mobile} */}
 

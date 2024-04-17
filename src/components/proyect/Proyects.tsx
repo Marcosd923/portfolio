@@ -3,7 +3,10 @@ import Link from "next/link";
 
 export const Proyects = () => {
   return (
-    <section className="flex w-full flex-col gap-8 pb-[10rem] pt-28 items-center justify-center px-2 sm:px-0 ">
+    <section
+      id="proyectos"
+      className="flex w-full flex-col gap-8 pb-[10rem]  items-center justify-center px-2 sm:px-0 "
+    >
       <h1 className="font-bold text-grisclaro text-3xl mt-20 mb-10 flex justify-center  before:content-['02.'] before:text-naranja divide-y-0">
         Proyectos
       </h1>
@@ -33,7 +36,7 @@ export const Proyects = () => {
             </p>
           </div>
         </div>
-        <div className="block group bg-grisoscuro w-full max-w-[28rem] hover:drop-shadow-white shadow-sm rounded-md overflow-hidden transition-all duration-200 grayscale hover:grayscale-0 ">
+        <div className="block group w-full max-w-[28rem]  hover:shadow-negro shadow-md rounded-md overflow-hidden transition-all duration-200 grayscale  hover:grayscale-0 group">
           <div className="overflow-hidden h-[220px]">
             <Link href="https://fullsix.onrender.com/">
               <Image
