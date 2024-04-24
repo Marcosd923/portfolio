@@ -61,16 +61,16 @@ export const Navbar = () => {
           <Link
             data-aos="fade-down"
             data-aos-duration="600"
-            href="/"
+            href="#skill"
             className="  p-2 text-grisclaro  hover:text-naranja before:content-['03.'] before:text-naranja"
           >
             {" "}
-            Servicios
+            Habilidades
           </Link>
           <Link
             data-aos="fade-down"
             data-aos-duration="800"
-            href="/"
+            href="#contacto"
             className="  p-2 text-grisclaro  hover:text-naranja before:content-['04.'] before:text-naranja"
           >
             {" "}
