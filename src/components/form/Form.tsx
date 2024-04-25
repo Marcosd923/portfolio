@@ -2,16 +2,7 @@ import React from "react";
 
 export const Form = () => {
   return (
-    <section className="text-gray-600 body-font relative grid grid-cols-2 mx-20 mt-10">
-      <div className="inset-0 bg-gray-300">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107134.75304208348!2d-60.77904096308141!3d-32.95203820200618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b6539335d7d75b%3A0xec4086e90258a557!2sRosario%2C%20Santa%20Fe!5e0!3m2!1ses-419!2sar!4v1713968957104!5m2!1ses-419!2sar"
-          width="600"
-          height="450"
-          className="py-10 px-10 rounded-md"
-        ></iframe>
-      </div>
-
+    <section className="text-gray-600 body-font   mt-10 mx-auto">
       <div className="my-6">
         <div className="grid sm:grid-cols-2 items-center gap-16 p-8 mx-auto max-w-4xl bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md text-grismedio font-[sans-serif]">
           <div>

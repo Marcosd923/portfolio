@@ -71,11 +71,11 @@ export const About = () => {
               </li>
             </ul>
           </div>
-          <div className="mx-auto flex max-w-lg flex-col gap-5 xl:max-w-md mt-5 xl:mt-2">
+          <div className="mx-auto flex max-w-lg  flex-col gap-5 xl:max-w-md mt-5 xl:mt-2">
             <Image
               //   data-aos="fade-left"
               //   data-aos-duration="1000"
-              className="rounded-md hover:filter-none animate-profile grayscale duration-300 bg-no-repeat"
+              className="rounded-full border-8  border-grisoscuro hover:filter-none animate-profile grayscale duration-300 bg-no-repeat "
               src={"/imgs/marcos.jpg"}
               alt={"Marcos Daut"}
               width={200}
