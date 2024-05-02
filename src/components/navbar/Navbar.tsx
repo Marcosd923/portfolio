@@ -27,8 +27,8 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header className="w-screen h-20 z-20 fized flex justify-center items-center backdrop-blur-[10px] animate-fade-in-down duration-500 px-4 md:px-8">
-      <nav className="w-full h-full flex items-center justify-between max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl ">
+    <header className="w-screen h-20 z-20  flex backdrop-blur-[10px] animate-fade-in-down duration-500 md:px-8 ">
+      <nav className="w-full h-full flex items-center  justify-between max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-full">
         <Link href={"#"}>
           <Image
             className=""
@@ -39,7 +39,7 @@ export const Navbar = () => {
           />
         </Link>
 
-        <ul className="hidden md:flex gap-7 lg:gap-3">
+        <ul className="hidden md:flex gap-7 lg:gap-6">
           <Link
             data-aos="fade-down"
             data-aos-duration="200"
@@ -77,17 +77,18 @@ export const Navbar = () => {
             Contacto
           </Link>
         </ul>
-        <div className="hidden md:flex  ">
+        <div>
           <Link
             data-aos="fade-down"
             data-aos-duration="1000"
             href="/"
-            className=" text-grisclaro rounded-lg  transition-all  border-4 border-naranja hover:bg-grisclaro hover:text-azul hover:font-bold p-2 hover:-translate-x-1 hover:-translate-y-1 "
+            className="hidden md:flex text-grisclaro rounded-lg  transition-all  border-4 border-naranja hover:bg-grisclaro hover:text-azul hover:font-bold p-2 hover:-translate-x-1 hover:-translate-y-1 "
           >
             {" "}
             Curriculum
           </Link>
         </div>
+
         {/* {menu en mobile} */}
 
         <IoMenu
