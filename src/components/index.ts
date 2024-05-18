@@ -6,4 +6,3 @@ export * from "./skill/Skill";
 export * from "./contact/Contact";
 export * from "./footer/Footer";
 export * from "./side-element/SideElement";
-export * from "./side-element/SideElementRigth";

@@ -6,7 +6,6 @@ import {
   Navbar,
   Proyects,
   SideElement,
-  SideElementRigth,
   Skill,
 } from "@/components";
 
@@ -15,7 +14,6 @@ export default function Home() {
     <>
       <Navbar />
       <SideElement />
-      <SideElementRigth />
       <MainSection />
       <About />
       <Proyects />
