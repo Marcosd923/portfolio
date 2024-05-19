@@ -7,7 +7,7 @@ export const Proyects = () => {
       id="proyectos"
       className="flex w-full flex-col gap-8 pb-[10rem]  items-center justify-center px-2 sm:px-0 "
     >
-      <h1 className="font-bold text-grisclaro text-3xl mt-20 mb-10 flex justify-center  before:content-['02.'] before:text-naranja divide-y-0">
+      <h1 className="font-bold mt-32 text-grisclaro text-3xl  mb-10 flex justify-center  before:content-['02.'] before:text-naranja divide-y-0">
         Proyectos
       </h1>
       <article className="m-auto mt-2  grid gap-8 md:gap-10 xl:grid-cols-2 2xl:grid-cols-2 max-w-md sm:max-w-lg lg:max-w-3xl xl:max-w-6xl 2xl:max-w-7xl ">

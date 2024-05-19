@@ -11,11 +11,11 @@ export const About = () => {
 
   return (
     <section id="sobre-mi">
-      <div className="flex-col mb-12 ">
+      <div className="flex flex-col mb-12 ">
         <h1
           //   data-aos="fade-down"
           //   data-aos-duration="1000"
-          className="font-bold w-full mx-auto text-grisclaro text-3xl mt-52 mb-10 flex xl:flex-row  max-w-3xl lg:max-w-4xl xl:max-w-5xl px-2 sm:px-4 md:px-6 before:content-['01.'] before:text-naranja divide-y-0"
+          className="font-bold w-full mx-auto  text-grisclaro text-3xl mt-20 mb-10 flex xl:flex-row  max-w-3xl lg:max-w-4xl xl:max-w-5xl px-2 sm:px-4 md:px-6 before:content-['01.'] before:text-naranja divide-y-0"
         >
           Sobre mi
         </h1>

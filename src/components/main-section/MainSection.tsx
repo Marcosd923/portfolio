@@ -10,7 +10,7 @@ export const MainSection = () => {
 
   return (
     <main>
-      <section className="ml-12 sm:ml-28  md:ml-44 xl:ml-60 ">
+      <section className="ml-12 sm:ml-28 mt-20 mb-52 md:ml-44 xl:ml-60 ">
         <div className="flex flex-col gap-1 pt-28 w-full">
           <h1
             // data-aos="fade-down"

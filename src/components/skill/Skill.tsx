@@ -14,8 +14,8 @@ import Prisma from "../icons/prisma-icon/Prisma";
 
 export const Skill = () => {
   return (
-    <section id="skill">
-      <div className="flex-col mb-20 ">
+    <section id="skill" className="mt-24">
+      <div className="flex-col mb-32 mt-20">
         <h1
           //   data-aos="fade-down"
           //   data-aos-duration="1000"
@@ -23,7 +23,7 @@ export const Skill = () => {
         >
           Habilidades
         </h1>
-        <article className="mx-auto flex w-full max-w-lg flex-col gap-2 sm:max-w-xl xl:max-w-2xl">
+        <article className="mx-auto mt-20 flex w-full max-w-lg flex-col gap-2 sm:max-w-xl xl:max-w-2xl">
           <div className="grid grid-cols-4 font-mono text-blanco ">
             <button className="flex flex-col items-center gap-3 py-6 grayscale hover:grayscale-0 text-grismedio hover:text-blanco hover:scale-[1.1] transition-all duration-300">
               <NextIcon className=" h-9 w-9 " />

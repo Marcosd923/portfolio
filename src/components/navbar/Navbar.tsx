@@ -24,6 +24,7 @@ export const Navbar = () => {
 
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
@@ -35,6 +36,7 @@ export const Navbar = () => {
         setShowNavbar(true);
       }
       setLastScrollY(window.scrollY);
+      setScrollY(window.scrollY);
     }
   };
 
@@ -56,9 +58,11 @@ export const Navbar = () => {
     <header
       className={`w-screen py-3 z-20  fixed  md:px-8 transition-transform duration-300 ${
         showNavbar
-          ? "translate-y-0 opacity-100 backdrop-blur-md bg-opacity-70"
-          : "-translate-y-full opacity-0 bg-opacity-100"
-      } ${showNavbar && window.scrollY > 0 ? "shadow-lg" : "shadow-none"}`}
+          ? `translate-y-0 opacity-100 backdrop-blur-md bg-opacity-70 ${
+              scrollY > 0 ? "shadow-lg" : "shadow-none"
+            }`
+          : "-translate-y-full opacity-0 bg-opacity-100 shadow-none"
+      }`}
     >
       <nav className="w-full h-full flex items-center  justify-between max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-full ">
         <div>

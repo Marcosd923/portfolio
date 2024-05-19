@@ -11,7 +11,7 @@ import {
 export const SideElement = () => {
   return (
     <section className="flex justify-between">
-      <nav className="fixed hidden md:flex flex-col sm:ml-4 lg:ml-12 my-56 ">
+      <nav className="fixed hidden md:flex flex-col sm:ml-4 lg:ml-12 my-80 ">
         <ul>
           <li className="my-7">
             <Link href={"https://github.com/Marcosd923"} target="_blank">
