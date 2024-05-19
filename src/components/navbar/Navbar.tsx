@@ -22,22 +22,56 @@ export const Navbar = () => {
 
   const openSideMenu = useUIStore((state) => state.openSideMenu);
 
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY > lastScrollY) {
+        // scroll down
+        setShowNavbar(false);
+      } else {
+        // scroll up
+        setShowNavbar(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+
+      return () => {
+        window.removeEventListener("scroll", controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+
   useEffect(() => {
     AOS.init({});
   }, []);
 
   return (
-    <header className="w-screen h-20 z-20  flex backdrop-blur-[10px] animate-fade-in-down duration-500 md:px-8 ">
-      <nav className="w-full h-full flex items-center  justify-between max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-full">
-        <Link href={"#"}>
-          <Image
-            className=""
-            src={"/imgs/hex-icono-principal.png"}
-            alt={""}
-            height={60}
-            width={60}
-          />
-        </Link>
+    <header
+      className={`w-screen py-3 z-20  fixed  md:px-8 transition-transform duration-300 ${
+        showNavbar
+          ? "translate-y-0 opacity-100 backdrop-blur-md bg-opacity-70"
+          : "-translate-y-full opacity-0 bg-opacity-100"
+      } ${showNavbar && window.scrollY > 0 ? "shadow-lg" : "shadow-none"}`}
+    >
+      <nav className="w-full h-full flex items-center  justify-between max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-full ">
+        <div>
+          <Link href={"#"}>
+            <Image
+              className=""
+              src={"/imgs/hex-icono-principal.png"}
+              alt={""}
+              height={60}
+              width={60}
+            />
+          </Link>
+        </div>
 
         <ul className="hidden md:flex gap-7 lg:gap-6">
           <Link
@@ -82,7 +116,7 @@ export const Navbar = () => {
             data-aos="fade-down"
             data-aos-duration="1000"
             href="/"
-            className="hidden md:flex text-grisclaro rounded-lg  transition-all  border-4 border-naranja hover:bg-grisclaro hover:text-azul hover:font-bold p-2 hover:-translate-x-1 hover:-translate-y-1 "
+            className="hidden md:flex text-grisclaro rounded-lg  transition-all  border-4 border-naranja hover:bg-grisclaro hover:text-azul hover:font-bold p-2 hover:-translate-x-1 hover:-translate-y-1 mr-8"
           >
             {" "}
             Curriculum
@@ -90,69 +124,70 @@ export const Navbar = () => {
         </div>
 
         {/* {menu en mobile} */}
+        <div className="md:hidden ">
+          <IoMenu
+            color="#F95738"
+            size={50}
+            className="md:hidden sm:flex absolute top-5 right-9 cursor-pointer"
+            onClick={openSideMenu}
+          ></IoMenu>
 
-        <IoMenu
-          color="#F95738"
-          size={50}
-          className="md:hidden sm:flex absolute top-5 right-9 cursor-pointer"
-          onClick={openSideMenu}
-        ></IoMenu>
-
-        <div>
-          {isSideMenuOpen && (
-            <div className="fixed top-0 left-0 w-screen h-screen z-10 bg-negro opacity-30 "></div>
-          )}
-          {isSideMenuOpen && (
-            <div className="fade-in fixed top-0 left-0 w-screen h-screen z-10 backdrop-filter backdrop-blur-md"></div>
-          )}
-          <div
-            className={clsx(
-              "fixed p-5 right-0 top-0 w-[350px] h-screen bg-azul z-20 shadow-2xl tranform transition duration-300",
-              { "translate-x-full": !isSideMenuOpen }
+          <div>
+            {isSideMenuOpen && (
+              <div className="fixed top-0 left-0 w-screen h-screen z-10 bg-negro opacity-30 "></div>
             )}
-          >
-            <IoCloseOutline
-              color="#475569"
-              size={50}
-              className="absolute top-5 right-5 cursor-pointer "
-              onClick={() => closeMenu()}
-            />
-            <Link
-              href={"/"}
-              className="flex items-center mt-10 p-2 rounded transition-all"
+            {isSideMenuOpen && (
+              <div className="fade-in fixed top-0 left-0 w-screen h-screen z-10 backdrop-filter backdrop-blur-md"></div>
+            )}
+            <div
+              className={clsx(
+                "fixed p-5 right-0 top-0 w-[350px] h-screen bg-azul z-20 shadow-2xl tranform transition duration-300",
+                { "translate-x-full": !isSideMenuOpen }
+              )}
             >
-              <IoAccessibility size={30} color="#F95738" />
-              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">
-                Sobre mi
-              </span>
-            </Link>
-            <Link
-              href={"/"}
-              className="flex items-center mt-10 p-2 rounded transition-all"
-            >
-              <IoAlbums size={30} color="#F95738" />
-              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">
-                Proyectos
-              </span>
-            </Link>
-            <Link
-              href={"/"}
-              className="flex items-center mt-10 p-2 rounded transition-all"
-            >
-              <IoBriefcase size={30} color="#F95738" />
-              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">
-                Servicios
-              </span>
-            </Link>
-            <Link
-              href={"/"}
-              className="flex items-center mt-10 p-2 rounded transition-all"
-            >
-              <IoPerson size={30} color="#F95738" />
-              <span className="ml-3 text-xl text-grisclaro hover:text-naranja">
-                Contacto
-              </span>
-            </Link>
+              <IoCloseOutline
+                color="#475569"
+                size={50}
+                className="absolute top-5 right-5 cursor-pointer "
+                onClick={() => closeMenu()}
+              />
+              <Link
+                href={"/"}
+                className="flex items-center mt-10 p-2 rounded transition-all"
+              >
+                <IoAccessibility size={30} color="#F95738" />
+                <span className="ml-3 text-xl text-grisclaro hover:text-naranja">
+                  Sobre mi
+                </span>
+              </Link>
+              <Link
+                href={"/"}
+                className="flex items-center mt-10 p-2 rounded transition-all"
+              >
+                <IoAlbums size={30} color="#F95738" />
+                <span className="ml-3 text-xl text-grisclaro hover:text-naranja">
+                  Proyectos
+                </span>
+              </Link>
+              <Link
+                href={"/"}
+                className="flex items-center mt-10 p-2 rounded transition-all"
+              >
+                <IoBriefcase size={30} color="#F95738" />
+                <span className="ml-3 text-xl text-grisclaro hover:text-naranja">
+                  Servicios
+                </span>
+              </Link>
+              <Link
+                href={"/"}
+                className="flex items-center mt-10 p-2 rounded transition-all"
+              >
+                <IoPerson size={30} color="#F95738" />
+                <span className="ml-3 text-xl text-grisclaro hover:text-naranja">
+                  Contacto
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
