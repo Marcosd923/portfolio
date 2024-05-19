@@ -1,11 +1,12 @@
 import Link from "next/link";
 import React from "react";
+
 import {
-  IoLogoGithub,
-  IoLogoInstagram,
-  IoLogoLinkedin,
-  IoLogoWhatsapp,
-} from "react-icons/io5";
+  IconBrandLinkedin,
+  IconBrandWhatsapp,
+  IconBrandInstagram,
+  IconBrandGithub,
+} from "@tabler/icons-react";
 
 export const SideElement = () => {
   return (
@@ -14,25 +15,25 @@ export const SideElement = () => {
         <ul>
           <li className="my-7">
             <Link href={"https://github.com/Marcosd923"} target="_blank">
-              <IoLogoGithub
+              <IconBrandGithub
                 color="rgb(100 116 139)"
-                className="w-6 h-6 hover:-translate-y-1 duration-200"
+                className="w-6 h-6 hover:-translate-y-1 duration-200 hover:stroke-naranja"
               />
             </Link>
           </li>
           <li className="my-7">
             <Link href={"#"}>
-              <IoLogoInstagram
+              <IconBrandInstagram
                 color="rgb(100 116 139)"
-                className="w-6 h-6 hover:-translate-y-1  duration-200"
+                className="w-6 h-6 hover:-translate-y-1  duration-200 hover:stroke-naranja"
               />
             </Link>
           </li>
           <li className="my-7">
             <Link href={"#"}>
-              <IoLogoWhatsapp
+              <IconBrandWhatsapp
                 color="rgb(100 116 139)"
-                className="w-6 h-6 hover:-translate-y-1 duration-200 "
+                className="w-6 h-6 hover:-translate-y-1 duration-200  hover:stroke-naranja"
               />
             </Link>
           </li>
@@ -41,9 +42,9 @@ export const SideElement = () => {
               href={"https://www.linkedin.com/in/marcosdaut/"}
               target="_blank"
             >
-              <IoLogoLinkedin
+              <IconBrandLinkedin
                 color="rgb(100 116 139)"
-                className="w-6 h-6 hover:-translate-y-1 duration-200"
+                className="w-6 h-6 hover:-translate-y-1 duration-200 hover:stroke-naranja"
               />
             </Link>
           </li>
