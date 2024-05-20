@@ -24,7 +24,7 @@ export const Skill = () => {
           Habilidades
         </h1>
         <article className="mx-auto mt-20 flex w-full max-w-lg flex-col gap-2 sm:max-w-xl xl:max-w-2xl">
-          <div className="grid grid-cols-4 font-mono text-blanco ">
+          <div className="grid grid-cols-3 md:grid-cols-4 font-mono text-blanco ">
             <button className="flex flex-col items-center gap-3 py-6 grayscale hover:grayscale-0 text-grismedio hover:text-blanco hover:scale-[1.1] transition-all duration-300">
               <NextIcon className=" h-9 w-9 " />
               <p className="text-center text-xs md:text-sm font-semibold ">

@@ -10,8 +10,8 @@ export const Proyects = () => {
       <h1 className="font-bold mt-32 text-grisclaro text-3xl  mb-10 flex justify-center  before:content-['02.'] before:text-naranja divide-y-0">
         Proyectos
       </h1>
-      <article className="m-auto mt-2  grid gap-8 md:gap-10 xl:grid-cols-2 2xl:grid-cols-2 max-w-md sm:max-w-lg lg:max-w-3xl xl:max-w-6xl 2xl:max-w-7xl ">
-        <div className=" block group w-full max-w-[28rem]  hover:shadow-negro shadow-md rounded-md overflow-hidden transition-all duration-200 grayscale  hover:grayscale-0 group">
+      <article className="m-auto mt-2  grid gap-8 md:gap-10 xl:grid-cols-2 2xl:grid-cols-2 max-w-md sm:max-w-lg lg:max-w-3xl xl:max-w-6xl 2xl:max-w-7xl px-3">
+        <div className=" block group w-full max-w-[28rem]  hover:shadow-negro shadow-md rounded-md overflow-hidden transition-all duration-200 grayscale  hover:grayscale-0 group ">
           <div className="overflow-hidden h-[230px] ">
             <Link href="https://fullsix.onrender.com/">
               <Image

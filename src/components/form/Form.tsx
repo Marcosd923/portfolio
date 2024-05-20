@@ -4,13 +4,13 @@ export const Form = () => {
   return (
     <section className="mt-20 ">
       <div
-        className="grid sm:grid-cols-2 items-center gap-16 p-8 mx-auto max-w-2xl
+        className="grid sm:grid-cols-2 items-center gap-16 p-8 mx-auto max-w-sm sm:max-w-lg md:max-w-3xl lg:max-w-4xl
         bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md
         text-[#333] font-[sans-serif]"
       >
         <div></div>
         <form action="" className="  grid gap-y-0">
-          <label htmlFor="name" className="text-blanco text-lg">
+          <label htmlFor="name" className="text-grisclaro text-md">
             Nombre
           </label>
           <input
@@ -21,7 +21,7 @@ export const Form = () => {
             className="rounded-md  mb-2 font-sans pl-2 p-1 text-sm py-2"
           />
 
-          <label htmlFor="email" className="text-blanco text-lg">
+          <label htmlFor="email" className="text-grisclaro text-md">
             Email
           </label>
           <input
@@ -32,7 +32,7 @@ export const Form = () => {
             placeholder="Ejemplo@email.com"
           />
 
-          <label htmlFor="subjet" className=" text-blanco text-lg">
+          {/* <label htmlFor="subjet" className=" text-grisclaro text-md">
             Asunto
           </label>
           <input
@@ -41,21 +41,21 @@ export const Form = () => {
             name="subjet"
             className="rounded-md mb-2 font-sans pl-2 p-0.5 text-sm py-2"
             placeholder="Coloque un asunto"
-          />
+          /> */}
 
-          <label htmlFor="message" className="text-blanco text-lg">
+          <label htmlFor="message" className="text-grisclaro text-md">
             Mensaje
           </label>
           <textarea
             id="message"
             name="message"
-            className="rounded-md mt-0.5 font-sans pl-2 p-0.5 text-sm h-16"
+            className="rounded-md mt-0.5 font-sans pl-2 p-0.5 text-sm h-20"
             placeholder="Escriba su mensaje aquí"
           />
 
           <button
             type="submit"
-            className="rounded-md bg-azulmedio text-blanco mt-6  flex py-2 px-4 justify-center"
+            className="rounded-md bg-naranja hover:bg-naranjaoscuro text-blanco mt-6  flex py-2 px-16 mx-auto justify-center"
           >
             Enviar
           </button>
