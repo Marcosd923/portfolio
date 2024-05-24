@@ -1,6 +1,35 @@
-import React from "react";
+"use client";
+
+import { useState } from "react";
+
+interface FormSubmitEvent extends React.FormEvent<HTMLFormElement> {}
+
+interface FormError {
+  message: string;
+}
 
 export const Form = () => {
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (event: FormSubmitEvent) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const response = await fetch(event.currentTarget.action, {
+      method: "POST",
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+    const result = await response.json();
+    if (!response.ok) {
+      setMessage(
+        (result.errors as FormError[]).map((error) => error.message).join(", ")
+      );
+      return false;
+    }
+    setMessage("Se ha enviado tu correo satifactoriamente");
+  };
   return (
     <section className="mt-20 ">
       <div
@@ -9,7 +38,12 @@ export const Form = () => {
         text-[#333] font-[sans-serif]"
       >
         <div></div>
-        <form action="" className="  grid gap-y-0">
+        <form
+          action="https://formspree.io/f/mbjneabw"
+          method="POST"
+          onSubmit={handleSubmit}
+          className="grid gap-y-0"
+        >
           <label htmlFor="name" className="text-grisclaro text-md">
             Nombre
           </label>
@@ -32,17 +66,6 @@ export const Form = () => {
             placeholder="Ejemplo@email.com"
           />
 
-          {/* <label htmlFor="subjet" className=" text-grisclaro text-md">
-            Asunto
-          </label>
-          <input
-            type="text"
-            id="subjet"
-            name="subjet"
-            className="rounded-md mb-2 font-sans pl-2 p-0.5 text-sm py-2"
-            placeholder="Coloque un asunto"
-          /> */}
-
           <label htmlFor="message" className="text-grisclaro text-md">
             Mensaje
           </label>
@@ -59,6 +82,7 @@ export const Form = () => {
           >
             Enviar
           </button>
+          <p>{message}</p>
         </form>
       </div>
     </section>
