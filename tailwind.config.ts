@@ -22,6 +22,7 @@ const config: Config = {
       grisoscuro: "#475569",
       negro: "#000000",
       blanco: "#FFFFFF",
+      rojo: "#FF0000",
     },
     extend: {
       backgroundImage: {

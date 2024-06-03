@@ -3,44 +3,54 @@
 import { IconBrandWhatsapp, IconMail, IconMapPin } from "@tabler/icons-react";
 import Link from "next/link";
 import { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 
-interface FormSubmitEvent extends React.FormEvent<HTMLFormElement> {}
-
-interface FormError {
+interface FormData {
+  name: string;
+  email: string;
   message: string;
 }
 
 export const Form = () => {
   const [message, setMessage] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FormData>();
 
-  const handleSubmit = async (event: FormSubmitEvent) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const response = await fetch(event.currentTarget.action, {
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    const response = await fetch("https://formspree.io/f/mbjneabw", {
       method: "POST",
-      body: data,
+      body: JSON.stringify(data),
       headers: {
         Accept: "application/json",
+        "Content-Type": "application/json",
       },
     });
+
     const result = await response.json();
     if (!response.ok) {
       setMessage(
-        (result.errors as FormError[]).map((error) => error.message).join(", ")
+        result.errors.map((error: { message: any }) => error.message).join(", ")
       );
       return false;
     }
-    setMessage("Se ha enviado tu correo satifactoriamente");
+    setMessage("Se ha enviado tu correo satisfactoriamente ✔");
+    reset();
   };
   return (
     <section className="mt-20 ">
       <div
-        className="grid sm:grid-cols-2  gap-16 p-8 mx-auto max-w-sm sm:max-w-lg md:max-w-3xl lg:max-w-4xl
+        className="grid sm:grid-cols-2  gap-14 p-8 mx-auto max-w-sm sm:max-w-lg md:max-w-3xl lg:max-w-4xl
         bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md
         text-[#333] font-[sans-serif]"
       >
         <div className="ml-3">
-          <div className=" text-4xl font-extrabold text-blanco">Hablemos!</div>
+          <div className=" text-5xl font-extrabold text-blanco ">
+            Trabajemos juntos!
+          </div>
           <p className="flex py-4  text-sm text-grismedio">
             Tenes alguna idea o marca que desarrollar? Mandame un mensaje y lo
             conversamos. Me encantaría conocer tu proyecto y poder ayudarte.
@@ -75,22 +85,21 @@ export const Form = () => {
           </div>
         </div>
 
-        <form
-          action="https://formspree.io/f/mbjneabw"
-          method="POST"
-          onSubmit={handleSubmit}
-          className="grid gap-y-0 mr-3"
-        >
+        <form onSubmit={handleSubmit(onSubmit)} className="grid gap-y-0 mr-3">
           <label htmlFor="name" className="text-grisclaro text-md">
             Nombre
           </label>
           <input
             type="text"
             id="name"
-            name="name"
+            {...register("name", {
+              required: "El nombre es obligatorio ",
+              minLength: 3,
+            })}
             placeholder="Ingrese su nombre"
-            className="rounded-md  mb-2 font-sans pl-2 p-1 text-sm py-2"
+            className="rounded-md mb-2 font-sans pl-2 p-1 text-sm py-2"
           />
+          {errors.name && <p className="text-naranja">{errors.name.message}</p>}
 
           <label htmlFor="email" className="text-grisclaro text-md">
             Email
@@ -98,28 +107,42 @@ export const Form = () => {
           <input
             type="email"
             id="email"
-            name="email"
-            className="rounded-md mb-2 font-sans pl-2 p-1 text-sm py-2"
+            {...register("email", {
+              required: "El email es obligatorio",
+              pattern: {
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                message: "Formato de email inválido",
+              },
+            })}
             placeholder="Ejemplo@email.com"
+            className="rounded-md mb-2 font-sans pl-2 p-1 text-sm py-2"
           />
+          {errors.email && (
+            <p className="text-naranja">{errors.email.message}</p>
+          )}
 
           <label htmlFor="message" className="text-grisclaro text-md">
             Mensaje
           </label>
           <textarea
             id="message"
-            name="message"
-            className="rounded-md mt-0.5 font-sans pl-2 p-0.5 text-sm h-20"
+            {...register("message", {
+              required: "El mensaje es obligatorio",
+            })}
             placeholder="Escriba su mensaje aquí"
+            className="rounded-md mt-0.5 font-sans pl-2 p-0.5 text-sm h-20"
           />
+          {errors.message && (
+            <p className="text-naranja">{errors.message.message}</p>
+          )}
 
           <button
             type="submit"
-            className="rounded-md bg-naranja hover:bg-naranjaoscuro text-blanco mt-6  flex py-2 px-16 mx-auto justify-center"
+            className="rounded-md bg-naranja hover:bg-naranjaoscuro text-blanco mt-6 py-1 px-16 mx-auto justify-center"
           >
             Enviar
           </button>
-          <p>{message}</p>
+          <p className="text-blanco text-center pt-2 ">{message} </p>
         </form>
       </div>
     </section>
