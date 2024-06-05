@@ -10,12 +10,12 @@ export const MainSection = () => {
 
   return (
     <main>
-      <section className="ml-12 sm:ml-28 mt-20 mb-52 md:ml-44 xl:ml-60 ">
+      <section className="ml-12 sm:ml-28 mt-20 md:mb-40 md:ml-44 xl:ml-60 ">
         <div className="flex flex-col gap-1 pt-28 w-full">
           <h1
             // data-aos="fade-down"
             // data-aos-duration="1000"
-            className="  text-naranja w-full text-xs sm:text-base md:text-lg xl:text-2xl block"
+            className="  text-naranja w-full  text-lg xl:text-2xl block"
           >
             Hola, mi nombre es
           </h1>

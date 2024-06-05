@@ -41,21 +41,21 @@ export const Form = () => {
     reset();
   };
   return (
-    <section className="mt-20 ">
+    <section className="mt-8 ">
       <div
-        className="grid sm:grid-cols-2  gap-14 p-8 mx-auto max-w-sm sm:max-w-lg md:max-w-3xl lg:max-w-4xl
+        className="grid sm:grid-cols-2 gap-4 sm:gap-14 p-8 mx-auto max-w-sm sm:max-w-lg md:max-w-3xl lg:max-w-4xl
         bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md
         text-[#333] font-[sans-serif]"
       >
         <div className="ml-3">
-          <div className=" text-5xl font-extrabold text-blanco ">
+          <div className="text-center sm:text-left text-5xl font-extrabold text-blanco ">
             Trabajemos juntos!
           </div>
-          <p className="flex py-4  text-sm text-grismedio">
+          <p className=" text-center sm:text-left py-4  text-sm text-grismedio">
             Tenes alguna idea o marca que desarrollar? Mandame un mensaje y lo
             conversamos. Me encantaría conocer tu proyecto y poder ayudarte.
           </p>
-          <div className="mt-3">
+          <div className="hidden sm:grid mt-3">
             <Link
               href={"https://wa.me/5492477336490"}
               className="flex items-center text-grismedio hover:text-blanco"
@@ -85,7 +85,7 @@ export const Form = () => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="grid gap-y-0 mr-3">
+        <form onSubmit={handleSubmit(onSubmit)} className="grid gap-y-0 p-2">
           <label htmlFor="name" className="text-grisclaro text-md">
             Nombre
           </label>
@@ -130,7 +130,7 @@ export const Form = () => {
               required: "El mensaje es obligatorio",
             })}
             placeholder="Escriba su mensaje aquí"
-            className="rounded-md mt-0.5 font-sans pl-2 p-0.5 text-sm h-20"
+            className="rounded-md mb-2 font-sans pl-2 py-2 text-sm h-20"
           />
           {errors.message && (
             <p className="text-naranja">{errors.message.message}</p>

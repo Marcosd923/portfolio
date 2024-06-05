@@ -5,15 +5,15 @@ export const Proyects = () => {
   return (
     <section
       id="proyectos"
-      className="flex w-full flex-col gap-8 pb-[10rem]  items-center justify-center px-2 sm:px-0 "
+      className="flex w-full flex-col gap-8  items-center justify-center px-2 sm:px-0 "
     >
-      <h1 className="font-bold mt-32 text-grisclaro text-3xl  mb-10 flex justify-center  before:content-['02.'] before:text-naranja divide-y-0">
+      <h1 className="font-bold mt-20 text-grisclaro text-3xl  mb-16 flex justify-center  before:content-['02.'] before:text-naranja divide-y-0">
         Proyectos
       </h1>
       <article className="m-auto mt-2  grid gap-8 md:gap-10 xl:grid-cols-2 2xl:grid-cols-2 max-w-md sm:max-w-lg lg:max-w-3xl xl:max-w-6xl 2xl:max-w-7xl px-3">
         <div className=" block group w-full max-w-[28rem]  hover:shadow-negro shadow-md rounded-md overflow-hidden transition-all duration-200 grayscale  hover:grayscale-0 group ">
           <div className="overflow-hidden h-[230px] ">
-            <Link href="https://fullsix.onrender.com/">
+            <Link href="https://fullsix.onrender.com/" target="_blank">
               <Image
                 className="object-cover group-hover:scale-[1.05] transition duration-300"
                 src={"/imgs/fullsix.png"}
@@ -38,7 +38,7 @@ export const Proyects = () => {
         </div>
         <div className="block group w-full max-w-[28rem]  hover:shadow-negro shadow-md rounded-md overflow-hidden transition-all duration-200 grayscale  hover:grayscale-0 group">
           <div className="overflow-hidden h-[220px]">
-            <Link href="https://fullsix.onrender.com/">
+            <Link href="https://fullsix.onrender.com/" target="_blank">
               <Image
                 className="object-cover group-hover:scale-[1.05] transition duration-300"
                 src={"/imgs/fullsix.png"}
