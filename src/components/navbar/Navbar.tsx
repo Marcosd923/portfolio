@@ -70,7 +70,7 @@ export const Navbar = () => {
             <Image
               className=""
               src={"/imgs/hex-icono-principal.png"}
-              alt={""}
+              alt={"Logo de Marcos Daut Dev"}
               height={60}
               width={60}
             />
@@ -156,7 +156,7 @@ export const Navbar = () => {
                 onClick={() => closeMenu()}
               />
               <Link
-                href={"/"}
+                href={"#sobre-mi"}
                 className="flex items-center mt-10 p-2 rounded transition-all"
               >
                 <IoAccessibility size={30} color="#F95738" />

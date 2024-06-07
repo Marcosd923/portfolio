@@ -37,7 +37,7 @@ export const About = () => {
             />
           </div>
           <div className="text-grismedio flex max-w-xl flex-col sm:max-w-prose md:max-w-xl lg:max-w-3xl mx-auto xl:mx-0 xl:max-w-[39rem] xl:justify-between text-base lg:text-lg">
-            <p className="text-justify px-6 sm:px-0 sm:text-left mb-3">
+            <p className="text-left px-6 sm:px-0 sm:text-left mb-3">
               ¡Hola! Mi nombre es Marcos y me considero una persona a la cual le
               gusta aprender e ir en búsqueda de nuevos desafíos. Me recibí de
               Programador Web Full Stack en el 2023 y actualmente estoy
