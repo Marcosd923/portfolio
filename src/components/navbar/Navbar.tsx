@@ -109,6 +109,7 @@ export const Navbar = () => {
             data-aos="fade-down"
             data-aos-duration="800"
             href="#contacto"
+            target="_blank"
             className="  p-2 text-grisclaro  hover:text-naranja before:content-['04.'] before:text-naranja"
           >
             {" "}
@@ -119,7 +120,8 @@ export const Navbar = () => {
           <Link
             data-aos="fade-down"
             data-aos-duration="1000"
-            href="/"
+            target="_blank"
+            href="https://drive.google.com/file/d/1Zvt90skTZPeOYyRxHeDDGn47gIywtCTO/view?usp=drive_link"
             className="hidden md:flex text-grisclaro rounded-lg  transition-all  border-4 border-naranja hover:bg-grisclaro hover:text-azul hover:font-bold p-2 hover:-translate-x-1 hover:-translate-y-1 mr-8"
           >
             {" "}
