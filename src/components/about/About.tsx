@@ -20,11 +20,7 @@ export const About = () => {
           Sobre mi
         </h1>
 
-        <article
-          // data-aos="fade-right"
-          // data-aos-duration="1000"
-          className=" flex gap-5 md:w-full mx-auto  font-sans flex-col xl:flex-row-reverse max-w-3xl lg:max-w-4xl  xl:max-w-5xl px-2 sm:px-4 md:px-6"
-        >
+        <article className=" flex gap-5 md:w-full mx-auto  font-sans flex-col xl:flex-row-reverse max-w-3xl lg:max-w-4xl  xl:max-w-5xl px-2 sm:px-4 md:px-6">
           <div className=" flex max-w-lg  flex-col gap-5 xl:max-w-md mx-auto ">
             <Image
               //   data-aos="fade-left"

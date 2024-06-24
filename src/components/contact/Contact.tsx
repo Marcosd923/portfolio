@@ -4,7 +4,7 @@ import { Form } from "../form/Form";
 export const Contact = () => {
   return (
     <section id="contacto">
-      <div className="w-full flex mx-auto max-w-3xl lg:max-w-4xl  px-3  md:px-0 text-center sm:text-end justify-between items-center">
+      <div className="w-full flex mx-auto max-w-3xl lg:max-w-4xl  px-3  md:px-0 text-center sm:text-end justify-between items-center fade-in">
         <h1 className="font-bold text-grisclaro text-3xl mt-20 mb-6  w-full  before:content-['04.'] before:text-naranja divide-y-0 ">
           Contacto
         </h1>

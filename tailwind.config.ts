@@ -24,6 +24,7 @@ const config: Config = {
       blanco: "#FFFFFF",
       rojo: "#FF0000",
     },
+
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

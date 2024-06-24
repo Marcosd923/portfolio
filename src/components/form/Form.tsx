@@ -53,7 +53,7 @@ export const Form = () => {
           </div>
           <p className=" text-center sm:text-left py-4  text-sm text-grismedio">
             Tenes alguna idea o marca que desarrollar? Mandame un mensaje y lo
-            conversamos. Me encantaría conocer tu proyecto y poder ayudarte.
+            hablamos. Me encantaría conocer tu proyecto!
           </p>
           <div className="hidden sm:grid mt-3">
             <Link

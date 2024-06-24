@@ -7,11 +7,10 @@ import "aos/dist/aos.css";
 import {
   IoAccessibility,
   IoAlbums,
-  IoBriefcase,
   IoCloseOutline,
+  IoGitBranch,
   IoMenu,
   IoPerson,
-  IoPersonOutline,
 } from "react-icons/io5";
 import { useUIStore } from "@/store";
 import clsx from "clsx";
@@ -56,7 +55,7 @@ export const Navbar = () => {
 
   return (
     <header
-      className={`w-screen py-3 z-20  fixed  md:px-8 transition-transform duration-300 ${
+      className={`w-screen py-3 z-20  fixed mx-2 md:mx-0 md:px-8 transition-transform duration-300 ${
         showNavbar
           ? `translate-y-0 opacity-100 backdrop-blur-md bg-opacity-70 ${
               scrollY > 0 ? "shadow-lg" : "shadow-none"
@@ -109,7 +108,6 @@ export const Navbar = () => {
             data-aos="fade-down"
             data-aos-duration="800"
             href="#contacto"
-            target="_blank"
             className="  p-2 text-grisclaro  hover:text-naranja before:content-['04.'] before:text-naranja"
           >
             {" "}
@@ -167,7 +165,7 @@ export const Navbar = () => {
                 </span>
               </Link>
               <Link
-                href={"/"}
+                href={"#proyectos"}
                 className="flex items-center mt-10 p-2 rounded transition-all"
               >
                 <IoAlbums size={30} color="#F95738" />
@@ -176,16 +174,16 @@ export const Navbar = () => {
                 </span>
               </Link>
               <Link
-                href={"/"}
+                href={"#skill"}
                 className="flex items-center mt-10 p-2 rounded transition-all"
               >
-                <IoBriefcase size={30} color="#F95738" />
+                <IoGitBranch size={30} color="#F95738" />
                 <span className="ml-3 text-xl text-grisclaro hover:text-naranja">
-                  Servicios
+                  Habilidades
                 </span>
               </Link>
               <Link
-                href={"/"}
+                href={"#contacto"}
                 className="flex items-center mt-10 p-2 rounded transition-all"
               >
                 <IoPerson size={30} color="#F95738" />
