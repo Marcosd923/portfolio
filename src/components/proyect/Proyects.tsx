@@ -38,10 +38,26 @@ export const Proyects = () => {
         </div>
         <div className="block group w-full max-w-[28rem]  hover:shadow-negro shadow-md rounded-md overflow-hidden transition-all duration-200 grayscale  hover:grayscale-0 group">
           <div className="overflow-hidden h-[220px]">
-            <Link href="https://fullsix.onrender.com/" target="_blank">
+            <Link
+              href="https://mellow-croquembouche-c2f016.netlify.app/"
+              target="_blank"
+            >
               <Image
                 className="object-cover group-hover:scale-[1.05] transition duration-300"
-                src={"/imgs/fullsix.png"}
+                src={"/imgs/pacientesveterinaria.png"}
+                alt={""}
+                height={1000}
+                width={1000}
+              />
+            </Link>
+          </div>
+        </div>
+        <div className="block group w-full max-w-[28rem]  hover:shadow-negro shadow-md rounded-md overflow-hidden transition-all duration-200 grayscale  hover:grayscale-0 group">
+          <div className="overflow-hidden h-[220px]">
+            <Link href="https://giftexpertappmd.netlify.app/" target="_blank">
+              <Image
+                className="object-cover group-hover:scale-[1.05] transition duration-300"
+                src={"/imgs/gifexpertapp.png"}
                 alt={""}
                 height={1000}
                 width={1000}
