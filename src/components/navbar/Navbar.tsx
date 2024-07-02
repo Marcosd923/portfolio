@@ -120,7 +120,7 @@ export const Navbar = () => {
             data-aos-duration="1000"
             target="_blank"
             href="https://drive.google.com/file/d/1Zvt90skTZPeOYyRxHeDDGn47gIywtCTO/view?usp=drive_link"
-            className="hidden md:flex text-grisclaro rounded-lg  transition-all  border-4 border-naranja hover:bg-grisclaro hover:text-azul hover:font-bold p-2 hover:-translate-x-1 hover:-translate-y-1 mr-8"
+            className="hidden md:flex text-grisclaro rounded-lg  transition-all  border-4 border-naranja hover:bg-grisclaro hover:text-azul hover:font-bold p-2 hover:-translate-x-1 hover:-translate-y-1 mr-8 "
           >
             {" "}
             Curriculum

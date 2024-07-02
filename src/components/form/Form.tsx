@@ -138,7 +138,7 @@ export const Form = () => {
 
           <button
             type="submit"
-            className="rounded-md bg-naranja hover:bg-naranjaoscuro text-blanco mt-6 py-1 px-16 mx-auto justify-center"
+            className="rounded-md bg-naranja hover:bg-naranjaoscuro text-blanco mt-6 py-1 px-12 mx-auto justify-center"
           >
             Enviar
           </button>
